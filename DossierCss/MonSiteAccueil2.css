@@ -1,0 +1,278 @@
+
+/* Importation de la police Exo 2 depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Applique le box-sizing border-box à tous les éléments */
+* {
+    box-sizing: border-box;
+}
+
+/* Style général du body */
+body {
+    font-family: "Exo 2", sans-serif; /* Police principale */
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #363030, #949191); /* Dégradé */
+    background: #d1d0d0; /* Couleur de fond */
+    width: 100%;
+}
+
+/* En-tête du site avec grille CSS */
+header {
+    display: grid;
+    grid-template-areas: 
+        "logo title buttons"
+        "logo paragraph buttons";
+    grid-template-columns: 1fr 3fr 1fr;
+    background-color: #363030;
+    background-image: linear-gradient(to right, #363030, #949191); /* Dégradé */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: #333 0.1em 0.5em 0.5em;
+}
+
+/* Zone du logo dans l'en-tête */
+.logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%; /* Cercle parfait */
+    object-fit: cover;   /* Affiche le centre si image */
+    /* Pour afficher uniquement le centre du logo, ajouter overflow: hidden et fixer la taille */
+    /* overflow: hidden;
+    width: 100px;
+    height: 100px; */
+}
+
+/* Titre dans l'en-tête */
+.title {
+    grid-area: title;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Paragraphe dans l'en-tête */
+.paragraph {
+    grid-area: paragraph;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Zone des boutons dans l'en-tête */
+.buttons {
+    grid-area: buttons;
+    display: flex;
+    row-gap: 1em;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style des boutons de l'en-tête */
+.btn {
+    background-color: #131313;
+    box-shadow: #333 0.5em 0.5em 0.5em;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    margin-left: 10px;
+}
+/* Effet de zoom sur les boutons au survol */
+.btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 #333;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+/* Barre de navigation principale */
+.main-nav {
+    padding: 20px;
+    text-decoration: none;    
+}
+
+/* Liste de navigation horizontale */
+.nav-list {
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    gap: 2.5em;
+}
+
+/* Animation de zoom sur les éléments de la nav au survol */
+.nav-list li {
+    transition: transform 0.25s ease-in-out; 
+}
+.nav-list li:hover {
+    transform: scale(1.4);
+}
+
+/* Boîte de recherche */
+.search-box {
+    margin-left: 0.5em;
+    margin-bottom: 20px;
+}
+
+/* Style général des liens (pas de soulignement) */
+a {
+    text-decoration: none;
+}
+
+.accueil-bg {
+    background-image: url('../Dossier images/Wallpapers/d2hd73xxwvaa1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px; /* ou la hauteur que tu veux */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Pour que le texte soit lisible */
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    text-shadow: #0f0f0f 0.5em 0.5em 0.5em;
+    
+}
+
+/* Grille principale du contenu */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+/* Barre latérale (sidebar) */
+.sidebar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    padding: 15px;
+    border: 1px solid;
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
+    box-shadow: #494848 0.5em 0.5em 0.5em;
+}
+
+/* Navigation secondaire dans la sidebar */
+.asideNav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    list-style: none;
+    text-indent: -2.5em; 
+}
+
+/* Contenu principal */
+.main-content {
+    padding: 20px;
+}
+
+/* Carte de présentation d'un site */
+.site-card {
+    display: grid;
+    grid-template-columns: 1fr 3fr 0.5fr 0.4fr ;
+    gap: 1em;
+    align-items: center;
+    justify-items: space-evenly;
+    background: rgba(255, 255, 255, 0.719);
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    text-align: left;
+    backdrop-filter: blur(10px);            /* Effet de flou */
+    -webkit-backdrop-filter: blur(10px);    /* Pour Safari */
+    border-left: 1px solid rgba(255,255,255,0.3); /* Bordure subtile */
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    
+}
+.site-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Paragraphe dans la carte site */
+.paragraphSite {
+    max-width: 100%;
+}
+
+/* Texte avec effet de zoom au survol */
+.transformText {
+    width: auto;
+    text-decoration: none;
+    transition: transform 0.25s ease-in-out;
+}
+.transformText:hover {
+    transform: scale(1.3);
+}
+
+/* Pied de page */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+/* Responsive : styles pour écran <= 780px */
+@media (max-width: 780px) {
+    header {
+        grid-template-areas: 
+            "logo title"
+            "logo paragraph"
+            "buttons buttons";
+        grid-template-columns: 1fr 2fr;
+    }
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1em;    
+    }
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        margin: -10px -10px -10px -50px;
+        gap: 0.5em;
+    }
+   .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+    h2 {
+        text-align: center;
+    }
+    .asideNav {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: space-between;
+    }
+    .asideNav li:hover {
+        transition: transform 0.25s ease-in-out;    
+        transform: scale(1.2);   
+}
+    a {
+        width: 100%;
+        text-align: center;
+    }
+    .sidebar {
+        display:none;
+    }
+    .site-card {
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8em;
+    }
+}

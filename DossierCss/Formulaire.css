@@ -1,0 +1,74 @@
+/* Style du fond masqué */
+.modal {
+  display:none; /* Masqué par défaut */  
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Animation d'apparition de la pop-up */
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Contenu de la pop-up */
+.modal-content {
+  animation: popupFadeIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);  
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 100vh;
+  height: 70vh;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Exemple de grille pour le formulaire */
+#addSiteForm {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1 colonne pour les labels, 2 pour les champs */
+    grid-template-rows: 1fr 1fr ;
+    gap: 15px 25px; /* 15px entre les lignes, 25px entre les colonnes */
+
+}
+
+.btn {
+    background-color: #131313;
+    box-shadow: #333 0.5em 0.5em 0.5em;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Bouton de fermeture */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
