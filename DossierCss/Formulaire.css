@@ -72,3 +72,13 @@ label {
   font-size: 22px;
   cursor: pointer;
 }
+
+/* Responsive : styles pour écran <= 780px */
+@media (max-width: 780px) {
+  .modal{
+    width: 50vh;
+  }
+  .modal-content {
+    width: 50vh;
+  }
+}
