@@ -1,0 +1,25 @@
+
+{
+  "name": "mon-projet",
+  "version": "1.0.0",
+  "description": "Serveur Node.js avec Express, MySQL2, et autres dépendances",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
