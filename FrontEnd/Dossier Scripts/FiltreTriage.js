@@ -19,7 +19,6 @@ export function filtrerSitesParRecherche(searchTerm, afficherAccueil, afficherSi
         }
     });
 }
-
 export function filtrerParCategorie(event, sites, afficherAccueil, afficherSites) {
     event.preventDefault();
     const cat = event.currentTarget.dataset.category;
