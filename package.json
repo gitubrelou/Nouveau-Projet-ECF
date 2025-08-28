@@ -1,25 +1,30 @@
-
 {
-  "name": "mon-projet",
+  "name": "web-cyclopedia",
   "version": "1.0.0",
-  "description": "Serveur Node.js avec Express, MySQL2, et autres dépendances",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node index.js",
+  "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitubrelou/Nouveau-Projet-ECF.git"
+  },
+  "author": "jj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitubrelou/Nouveau-Projet-ECF/issues"
+  },
+  "homepage": "https://github.com/gitubrelou/Nouveau-Projet-ECF#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "mysql2": "^3.14.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.0"
+    "mysql2": "^3.14.3",
+    "nodemon": "^3.1.10"
   }
 }
