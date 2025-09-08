@@ -13,6 +13,7 @@ export async function getAllSites(req, res, next) {
 // GET /api/sites/:id
 export async function getSiteById(req, res, next) {
   const id = Number(req.params.id);
+  console.log(id);
   if (!Number.isFinite(id)) return res.status(400).json({ error: 'invalid_id' });
   try {
     const [rows] = await pool.query('SELECT * FROM sites WHERE id = ?', [id]);
@@ -44,6 +45,8 @@ export async function createSite(req, res, next) {
     if (fields.length === 0) return res.status(400).json({ error: 'no_fields' });
 
     const sql = `INSERT INTO sites (${fields.join(',')}) VALUES (${placeholders.join(',')})`;
+    console.log(sql);
+    console.log(fields);
     const [result] = await pool.query(sql, values);
     const insertId = result.insertId;
     const [rows] = await pool.query('SELECT * FROM sites WHERE id = ?', [insertId]);
